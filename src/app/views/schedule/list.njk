@@ -1,0 +1,16 @@
+{% if schedules[0] %}
+  {% for schedule in schedules %}
+
+    <li class="{% if schedule.available == true %}past{% endif %}">
+      <div class="client">
+        <img height="50" src="/files/{{ schedule.avatar }}">
+        <span>{{ schedule.client }}</span>
+      </div>
+      <span>{{ schedule.hour }}</span>
+    </li>
+
+  {% endfor %}
+{% else %}
+  <li class="not_result">Não foram localizados agendamentos para esta data!</li>
+
+{% endif %}
